@@ -16,8 +16,8 @@ class I18n {
 
   localizationData() {
     return {
-      ...require("modules/package/lang").default,
-      ...require("modules/collective/lang").default,
+      // ...require("modules/package/lang").default,
+      // ...require("modules/collective/lang").default,
       ...require("common/lang/index.ts").default,
       ...(InitializeManager.default.get()?.data?.lang || {})
     };
