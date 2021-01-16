@@ -17,7 +17,7 @@
       "dom"
     ],
     "module": "esnext",
-    "moduleResolution": "Node",
+    "moduleResolution": "node",
     "noImplicitAny": true,
     "noImplicitReturns": true,
     "noImplicitThis": true,
