@@ -9,6 +9,7 @@
     "start:prod": "NODE_ENV=production node build/server.js"
   },
   "dependencies": {
+    "@types/react-scroll": "1.8.2",
     "awesome-typescript-loader": "5.2.1",
     "babel-core": "7.0.0-bridge.0",
     "babel-plugin-emotion": "11.0.0",
@@ -33,6 +34,7 @@
     "react-dom": "17.0.1",
     "react-loadable": "^5.5.0",
     "react-router-dom": "5.2.0",
+    "react-scroll": "1.8.1",
     "regenerator-runtime": "^0.13.3",
     "socket.io-client": "2.2.0",
     "styled-components": "^5.0.1",
