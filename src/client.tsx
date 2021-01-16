@@ -4,14 +4,14 @@ import { BrowserRouter } from "react-router-dom";
 import Loadable from "react-loadable";
 import { ThemeProvider } from "@material-ui/styles";
 import theme from "theme";
-// import RootStore from "stores";
-// import { BrandEnum } from "common/enumerations/BrandEnum";
-// import ThemeManager from "utilities/ThemeManager";
+import RootStore from "stores";
+import { BrandEnum } from "common/enumerations/BrandEnum";
+import ThemeManager from "utilities/ThemeManager";
 import _ from "lodash";
 
-// const themes = ThemeManager.setupTheme(BrandEnum.TTC);
+const themes = ThemeManager.setupTheme(BrandEnum.TTC);
 import App from "./App";
-// import InitializeManager from "common/Manager/InitializeManager";
+import InitializeManager from "common/Manager/InitializeManager";
 const isProduction = process.env.NODE_ENV == "production";
 
 if (typeof window !== "undefined" && isProduction === false) {
@@ -21,7 +21,7 @@ if (typeof window !== "undefined" && isProduction === false) {
 const root = document.getElementById("root");
 
 const data = _.get(window, "__STATE");
-// InitializeManager.default.rehydrate(data);
+InitializeManager.default.rehydrate(data);
 // document.getElementById('__STATE')?.remove()
 // delete window.__STATE;
 
@@ -38,8 +38,8 @@ if (module.hot) {
 
 function render(Root: any) {
   Loadable.preloadReady().then(() => {
-    // RootStore.create();
-    // RootStore.default.setThemeStore(themes);
+    RootStore.create();
+    RootStore.default.setThemeStore(themes);
     hydrate(
       <BrowserRouter>
         <ThemeProvider theme={theme}>
@@ -50,3 +50,7 @@ function render(Root: any) {
     );
   });
 }
+
+// import * as OfflinePluginRuntime from 'offline-plugin/runtime';
+
+// OfflinePluginRuntime.install();
