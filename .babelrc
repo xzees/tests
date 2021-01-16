@@ -1,0 +1,39 @@
+{
+  "presets": [
+    "razzle/babel",
+    "@babel/env",
+    "@babel/typescript",
+    "@babel/react"
+  ],
+  "plugins": [
+    "@emotion",
+    "react-loadable/babel",
+    [
+      "@babel/plugin-transform-runtime",
+      {
+        "regenerator": true
+      }
+    ],
+    [
+      "@babel/plugin-proposal-decorators",
+      {
+        "legacy": true
+      }
+    ],
+    [
+      "@babel/plugin-proposal-class-properties",
+      {
+        "loose": true
+      }
+    ],
+    "@babel/proposal-object-rest-spread",
+    "babel-plugin-styled-components"
+  ],
+  "env": {
+    "development": {
+      "plugins": [
+        "dynamic-import-node"
+      ]
+    }
+  }
+}
