@@ -10,10 +10,8 @@
   },
   "dependencies": {
     "@babel/preset-react": "7.7.4",
-    "@babel/runtime": "^7.9.2",
     "@datepicker-react/styled": "^2.7.0",
     "@emotion/babel-plugin": "11.1.2",
-    "@glidejs/glide": "^3.4.1",
     "@material-ui/core": "^4.9.9",
     "@redq/reuse-modal": "^1.2.4",
     "@types/common-tags": "^1.8.0",
