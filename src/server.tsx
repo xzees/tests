@@ -68,7 +68,7 @@ const server = express()
     const modules: any[] = [];
     const sheet = new ServerStyleSheet();
     const materialSheet = new ServerStyleSheets();
-    const { ServerDataContext, resolveData } = createServerContext();
+    // const { ServerDataContext, resolveData } = createServerContext();
 
     const dehydratedState = dehydrate({
       data: (req as any).DataGateway
@@ -78,8 +78,7 @@ const server = express()
     InitializeManager.default.rehydrate(dehydratedState);
 
     const markup = renderToString(
-      <ServerDataContext>
-        {sheet.collectStyles(
+        sheet.collectStyles(
           materialSheet.collect(
             <Capture report={(moduleName) => modules.push(moduleName)}>
               <ThemeProvider theme={theme}>
@@ -89,12 +88,11 @@ const server = express()
               </ThemeProvider>
             </Capture>
           )
-        )}
-      </ServerDataContext>
+        )
     );
     const css = materialSheet.toString();
     const styleTags = sheet.getStyleTags();
-    const data = await resolveData();
+    // const data = await resolveData();
 
     if (routerContext.url) {
       res.status(302).setHeader("Location", routerContext.url);
@@ -107,10 +105,10 @@ const server = express()
     const chunks = bundles.filter((bundle) => bundle.file.endsWith(".js"));
     const styles = bundles.filter((bundle) => bundle.file.endsWith(".css"));
 
-    let seo = [];
-    if (data?.data[0]?.data.length > 0) {
-      seo = data?.data[0]?.data?.map((v: any) => v.seo);
-    }
+    // let seo = [];
+    // if (data?.data[0]?.data.length > 0) {
+    //   seo = data?.data[0]?.data?.map((v: any) => v.seo);
+    // }
     res
       .status(
         routerContext.missed ? 404 : routerContext.serverStatusCode || 200
@@ -146,19 +144,6 @@ const server = express()
             }
             return `<meta ${property} />`;
           })}
-          ${seo && seo.length > 0 && `<title>${seo[0]?.title}</title>`}
-          
-          ${
-            seo &&
-            seo.length > 0 &&
-            seo[0]?.metadata?.map((key: any, x: any) => {
-              let property = "";
-              for (const __key in key) {
-                property += __key + '="' + key[__key] + '" ';
-              }
-              return `<meta ${property} />`;
-            })
-          }
           <meta property="fb:app_id" content="191364109480">
           <meta property="og:title" content="${
             dataGateway?.seo?.title
@@ -238,7 +223,6 @@ const server = express()
           `
               : ""
           }
-          ${data.toHtml()}
           </head>
           <body>
           ${
