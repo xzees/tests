@@ -17,13 +17,14 @@ const isProduction = process.env.NODE_ENV == "production";
 if (typeof window !== "undefined" && isProduction === false) {
   require("assets/fonts/font.css");
 }
+declare const window: any;
 
 const root = document.getElementById("root");
 
 const data = _.get(window, "__STATE");
 InitializeManager.default.rehydrate(data);
-// document.getElementById('__STATE')?.remove()
-// delete window.__STATE;
+document.getElementById('__STATE')?.remove()
+delete window.__STATE;
 
 window.document.onreadystatechange = (ev: Event) => {
   render(App);

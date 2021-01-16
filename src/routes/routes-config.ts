@@ -1,13 +1,13 @@
-import TestPage from "modules/main/pages/TestPage";
+import Payment from "modules/payment/route/index";
 import { RouteConfig } from "./RouteConfigType";
 
 export default () =>
   [
     {
-      path: "/",
+      path: "/payment",
       label: "Test Page",
-      exact: true,
-      component: TestPage,
+      exact: false,
+      component: Payment,
       showInNavigationBar: true
-    }
+    },
   ] as RouteConfig[];

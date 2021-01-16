@@ -1,26 +1,64 @@
-import _ from 'lodash'
-import { CreditCardTypeEnum } from 'common/enumerations/CreditCardTypeEnum';
-class CreditCardUtil {
+import Payment from "payment";
 
-  static default: CreditCardUtil = new CreditCardUtil()
-
-  private constructor() { }
-
-  private getRegex() {
-    return [
-      { regEx: /^4[0-9]{5}/ig, cardType: CreditCardTypeEnum.VISA },
-      { regEx: /^5[1-5][0-9]{4}/ig, cardType: CreditCardTypeEnum.MASTER_CARD },
-      { regEx: /^3[47][0-9]{3}/ig, cardType: CreditCardTypeEnum.AMEX },
-      { regEx: /^(5[06-8]\d{4}|6\d{5})/ig, cardType: CreditCardTypeEnum.MAESTRO },
-      { regEx: /(^(352)[8-9](\d{11}$|\d{12}$))|(^(35)[3-8](\d{12}$|\d{13}$))/ig, cardType: CreditCardTypeEnum.JCB }
-    ]
-  }
-
-  getCardType(cardNumber: string): CreditCardTypeEnum | undefined {
-    const match = _.head(this.getRegex().filter(x => x.regEx.test(cardNumber)))
-    if (!match) return undefined
-    return match.cardType
-  }
+function clearNumber(value = "") {
+  return value.replace(/\D+/g, "");
 }
 
-export default CreditCardUtil
+export function formatCreditCardNumber(value: any) {
+  if (!value) {
+    return value;
+  }
+
+  const issuer = Payment.fns.cardType(value);
+  const clearValue = clearNumber(value);
+  let nextValue;
+
+  switch (issuer) {
+    case "amex":
+      nextValue = `${clearValue.slice(0, 4)} ${clearValue.slice(
+        4,
+        10
+      )} ${clearValue.slice(10, 15)}`;
+      break;
+    case "dinersclub":
+      nextValue = `${clearValue.slice(0, 4)} ${clearValue.slice(
+        4,
+        10
+      )} ${clearValue.slice(10, 14)}`;
+      break;
+    default:
+      nextValue = `${clearValue.slice(0, 4)} ${clearValue.slice(
+        4,
+        8
+      )} ${clearValue.slice(8, 12)} ${clearValue.slice(12, 16)}`;
+      break;
+  }
+
+  return nextValue.trim();
+}
+
+export function formatCVC(value: string, allValues: any) {
+  const clearValue = clearNumber(value);
+  let maxLength = 4;
+
+  if (allValues.number) {
+    const issuer = Payment.fns.cardType(allValues.number);
+    maxLength = issuer === "amex" ? 4 : 3;
+  }
+
+  return clearValue.slice(0, maxLength);
+}
+
+export function formatExpirationDate(value: any) {
+  const clearValue = clearNumber(value);
+
+  if (clearValue.length >= 3) {
+    return `${clearValue.slice(0, 2)}/${clearValue.slice(2, 4)}`;
+  }
+
+  return clearValue;
+}
+
+export function formatFormData(data: any) {
+  return Object.keys(data).map(d => `${d}: ${data[d]}`);
+}

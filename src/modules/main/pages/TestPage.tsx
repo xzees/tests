@@ -1,11 +1,9 @@
-import React, { Fragment } from "react";
+import React from "react";
 
-type Props = {};
-
-class MainPage extends React.PureComponent<Props> {
-  render() {
-    return <>test</>;
-  }
+const MainPage = () => {
+  return (
+    <></>
+  );
 }
 
 export default MainPage;

@@ -5,35 +5,7 @@ class ImageManager {
   static default: ImageManager = new ImageManager();
 
   private constructor() {
-    // library.add(Icons.faMapMarkerAlt)
-    // library.add(Icons.faPlane)
-    // library.add(Icons.faExchangeAlt)
-    // library.add(Icons.faTimes)
-    // library.add(Icons.faChevronLeft)
-    // library.add(Icons.faChevronRight)
-    // library.add(Icons.faChevronUp)
-    // library.add(Icons.faChevronDown)
-    // library.add(Icons.faExclamationCircle)
-    // library.add(Icons.faCheck)
-    // library.add(Icons.faSortDown)
-    // library.add(Icons.faShoppingCart)
-    // library.add(Icons.faCaretUp)
-    // library.add(Icons.faCaretDown)
-    // library.add(Icons.faTrashAlt)
-    // library.add(Icons.faPlaneDeparture)
-    // library.add(Icons.faPlus)
-    // library.add(Icons.faMinus)
-    // library.add(Icons.faCalendarAlt)
-    // library.add(Icons.faClock)
-    // library.add(Icons.faLaptop)
-    // library.add(Icons.faSearch)
-    // library.add(Icons.faReceipt)
-    // library.add(Icons.faDollarSign)
-    // library.add(Icons.faClipboardList)
-    // library.add(Icons.faLongArrowAltRight)
-    // library.add(Icons.faInfoCircle)
-    // library.add(Icons.fas)
-    // library.add(IconsRegular.faCheckCircle)
+    
   }
 
   images = {
@@ -293,135 +265,13 @@ class ImageManager {
       shared: getModuleAssetsUrl("template") + "/share.svg",
       map: getModuleAssetsUrl("template") + "/map-point.svg"
     },
-    flight: {
-      happiness: getModuleAssetsUrl("flight") + "/happiness.svg",
-      like: getModuleAssetsUrl("flight") + "/like.svg",
-      pinBlack: getModuleAssetsUrl("flight") + "/pin-black.svg",
-      planeBlack: getModuleAssetsUrl("flight") + "/plane-black.svg",
-      idCard: getModuleAssetsUrl("flight") + "/id-card.png",
-      passport: getModuleAssetsUrl("flight") + "/passport.png",
-      adult: getModuleAssetsUrl("flight") + "/adult.png",
-      child: getModuleAssetsUrl("flight") + "/child.png",
-      infant: getModuleAssetsUrl("flight") + "/infant.png",
-      paymentSuccess: getModuleAssetsUrl("flight") + "/payment-success.png",
-      paymentFail: getModuleAssetsUrl("flight") + "/payment-fail.jpg",
-      seatLong: getModuleAssetsUrl("flight") + "/seat-long.png",
-      seatWidth: getModuleAssetsUrl("flight") + "/seat-width.png",
-      seatAngle: getModuleAssetsUrl("flight") + "/seat-angle.png",
-      notFound: getModuleAssetsUrl("flight") + "/flight-not-found.png",
-      ticket: getModuleAssetsUrl("flight") + "/ticket.svg",
-      blueSkyBackground: getModuleAssetsUrl("flight") + "/blue-sky.png",
-      airplaneWithMoonBackground:
-        getModuleAssetsUrl("flight") + "/airplane-with-moon-background.png",
-      magnifying: getModuleAssetsUrl("flight") + "/magnifying.svg"
-    },
-    hotel: {
+    sabuypay: {
       icon: {
-        crown: getModuleAssetsUrl("hotel") + "/icon/crown.svg",
-        coin: getModuleAssetsUrl("hotel") + "/icon/coin.svg",
-        kanokOrange: getModuleAssetsUrl("hotel") + "/icon/kanok-orange.svg",
-        verified: getModuleAssetsUrl("hotel") + "/icon/verified.svg",
-        tag: getModuleAssetsUrl("hotel") + "/icon/tag.svg",
-        bed1: getModuleAssetsUrl("hotel") + "/icon/bed 1.svg",
-        bed2: getModuleAssetsUrl("hotel") + "/icon/bed 2.svg",
-        bonus: getModuleAssetsUrl("hotel") + "/icon/bonus.svg"
+        logo: (getModuleAssetsUrl('sabuypay') + '/icons/SabuyPay-LOGO-Vertical-1.svg'),
       },
-      fontHotel: getModuleAssetsUrl("hotel") + "/fontHotel3.svg",
-      magnifying: getModuleAssetsUrl("hotel") + "/magnifying.svg",
-      BG2: getModuleAssetsUrl("hotel") + "/bg3.jpg",
-      BG9: getModuleAssetsUrl("hotel") + "/bg9.png",
-      banner: getModuleAssetsUrl("hotel") + "/boy-girl2.png?v=" + Math.random(),
-      btnApp: getModuleAssetsUrl("hotel") + "/app.svg",
-      btnPlayStore: getModuleAssetsUrl("hotel") + "/playstore.svg",
-      france: getModuleAssetsUrl("hotel") + "/077-france.svg",
-      bangkok: getModuleAssetsUrl("hotel") + "/bangkok.jpg",
-      boy: getModuleAssetsUrl("hotel") + "/boy.png",
-      girlBall: getModuleAssetsUrl("hotel") + "/girlball.png",
-      shutterStock: getModuleAssetsUrl("hotel") + "/shutterstock.png",
-      map: getModuleAssetsUrl("hotel") + "/map.jpg",
-      solitaire: getModuleAssetsUrl("hotel") + "/Solitaire.jpg",
-      mercure: getModuleAssetsUrl("hotel") + "/mercure.jpg",
-      mitsui: getModuleAssetsUrl("hotel") + "/mitsui_garden_Hotel.jpg",
-      tripadvisorIcon: getModuleAssetsUrl("hotel") + "/tripadvisor.jpg",
-      cham: getModuleAssetsUrl("hotel") + "/cham.jpg",
-      BG1: getModuleAssetsUrl("hotel") + "/bg.png",
-      star_full: getModuleAssetsUrl("hotel") + "/star_full.png",
-      star_half: getModuleAssetsUrl("hotel") + "/star_half.png",
-      krooms: getModuleAssetsUrl("hotel") + "/krooms.jpg",
-      flash_white: getModuleAssetsUrl("hotel") + "/flash-white.png",
-      alarm_clock: getModuleAssetsUrl("hotel") + "/alarm-clock.png",
-      italy: getModuleAssetsUrl("hotel") + "/011-italy.svg",
-      heartblue: getModuleAssetsUrl("hotel") + "/heart-blue.png",
-      starblue: getModuleAssetsUrl("hotel") + "/star-blue.png",
-      tag: getModuleAssetsUrl("hotel") + "/tag.png",
-      promotion: getModuleAssetsUrl("hotel") + "/promotion.png",
-      discountblue: getModuleAssetsUrl("hotel") + "/discount-blue.png",
-      crown: getModuleAssetsUrl("hotel") + "/crown.png",
-      mangrey: getModuleAssetsUrl("hotel") + "/adult-gray.png",
-      nightgrey: getModuleAssetsUrl("hotel") + "/night.svg",
-      doorgrey: getModuleAssetsUrl("hotel") + "/door-grey.png",
-      arrowdown: getModuleAssetsUrl("hotel") + "/arrow-down.png",
-      arrowleft: getModuleAssetsUrl("hotel") + "/arrow-left.png",
-      arrowleftwhite: getModuleAssetsUrl("hotel") + "/arrowleft.png",
-      arrowright: getModuleAssetsUrl("hotel") + "/arrow-right.png",
-      calendargrey: getModuleAssetsUrl("hotel") + "/calendar.png",
-      bed: getModuleAssetsUrl("hotel") + "/bed.png",
-      passenger: getModuleAssetsUrl("hotel") + "/passenger.png",
-      push: getModuleAssetsUrl("hotel") + "/push.png",
-      miner: getModuleAssetsUrl("hotel") + "/miner.png",
-      equalizerblue: getModuleAssetsUrl("hotel") + "/equalizer-blue.png",
-      travizgorate: getModuleAssetsUrl("hotel") + "/travizgilogo.png",
-      tripadvisorrate4_5: getModuleAssetsUrl("hotel") + "/ratings-4-5.png",
-      checkin: getModuleAssetsUrl("hotel") + "/checkin.png",
-      checkout: getModuleAssetsUrl("hotel") + "/checkout.png",
-      information: getModuleAssetsUrl("hotel") + "/information.png",
-      place: getModuleAssetsUrl("hotel") + "/place.png",
-      down: getModuleAssetsUrl("hotel") + "/down.png",
-      tripadvisorrate5: getModuleAssetsUrl("hotel") + "/ratings-5.png",
-      thumbsup: getModuleAssetsUrl("hotel") + "/thumbsup.png",
-      empty_cycle: getModuleAssetsUrl("hotel") + "/Circle.png",
-      plus_disable: getModuleAssetsUrl("hotel") + "/plus_disable.jpg",
-      minus_disable: getModuleAssetsUrl("hotel") + "/minus_disable.jpg",
-      arrow_left_grey: getModuleAssetsUrl("hotel") + "/arrow-left-grey.png",
-      quotationmark: getModuleAssetsUrl("hotel") + "/quotation-mark.png",
-      googleplay: getModuleAssetsUrl("hotel") + "/googleplay.png",
-      appstore: getModuleAssetsUrl("hotel") + "/appstore.png",
-      imgDot1: getModuleAssetsUrl("hotel") + "/dot1.jpg",
-      one_finger_click: getModuleAssetsUrl("hotel") + "/one-finger-click.png",
-      tourist: getModuleAssetsUrl("hotel") + "/tourist.png",
-      ssl: getModuleAssetsUrl("hotel") + "/ssl.png",
-      saletag: getModuleAssetsUrl("hotel") + "/sale-tag.png",
-      thai: getModuleAssetsUrl("hotel") + "/thai.png",
-      successpaymenthotel: getModuleAssetsUrl("hotel") + "/success_image.png",
-      hotelreception: getModuleAssetsUrl("hotel") + "/hotel-reception.jpg",
-      phuket: getModuleAssetsUrl("hotel") + "/phuket.jpg",
-      chiangmai: getModuleAssetsUrl("hotel") + "/chiangmai.jpg",
-      pattaya: getModuleAssetsUrl("hotel") + "/pattaya.jpg",
-      bedblue: getModuleAssetsUrl("hotel") + "/bed-blue.png",
-      twohearts: getModuleAssetsUrl("hotel") + "/two-hearts.png",
-      bedwhite: getModuleAssetsUrl("hotel") + "/bed-white.png",
-      tripad: getModuleAssetsUrl("hotel") + "/Tripadvisor.jpg"
+      logofooter: (getModuleAssetsUrl('sabuypay') + '/gdsv.png'),
+
     },
-    package: {
-      icon: {
-        tag: getModuleAssetsUrl("package") + "/icon/tag.svg"
-      },
-      mainBoy: getModuleAssetsUrl("package") + "/main-boy.png",
-      bannerMain: getModuleAssetsUrl("package") + "/banner-main.jpg",
-      mainBrowser: getModuleAssetsUrl("package") + "/main-browser.png",
-      mainMobile: getModuleAssetsUrl("package") + "/main-mobile.png",
-      chinaTownSingapore:
-        getModuleAssetsUrl("package") + "/chinatown-singapore.png",
-      riverRafting: getModuleAssetsUrl("package") + "/river-rafting.jpg",
-      france1930775: getModuleAssetsUrl("package") + "/france-1930775.jpg",
-      bg2: getModuleAssetsUrl("package") + "/bg2.jpg",
-      aircraft: getModuleAssetsUrl("package") + "/aircraft-465723.jpg",
-      appstore: getModuleAssetsUrl("package") + "/appstore.png",
-      googleplay: getModuleAssetsUrl("package") + "/googleplay.png",
-      contentBG1: getModuleAssetsUrl("package") + "/b-1.jpg",
-      contentBG2: getModuleAssetsUrl("package") + "/b-2.jpg",
-      contentBG3: getModuleAssetsUrl("package") + "/b-3.jpg"
-    }
   };
 }
 
