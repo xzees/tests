@@ -44,7 +44,7 @@
     "json-loader": "0.5.7",
     "json-to-table": "^4.2.0",
     "lodash": "4.17.15",
-    "moment-timezone": "0.5.27",
+    "moment-timezone": "0.5.32",
     "numeral": "2.0.6",
     "points-cluster": "0.1.4",
     "prop-types": "^15.7.2",

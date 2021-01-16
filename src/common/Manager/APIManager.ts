@@ -50,7 +50,7 @@ class APIManager {
         .then((response) => {
           const responseModel = new APIResponse(
             response.data,
-            response.status == StatusCode.SUCCESS
+            response.status === StatusCode.SUCCESS
           );
           resolve(responseModel);
         })

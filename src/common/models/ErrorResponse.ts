@@ -1,15 +1,15 @@
-import _ from 'lodash'
-import APIResponse from 'modules/hotel/APIRequest/APIResponse';
+import _ from "lodash";
+import APIResponse from "common/APIRequests/APIResponse";
 
 class ErrorResponse implements APIResponse {
-  messageCode?: string
-  message: string
-  note: any
-  status: number
+  messageCode?: string;
+  message: string;
+  note: any;
+  status: number;
 
   constructor(message: string, status: number = 400) {
     this.status = status;
-    this.message = message
+    this.message = message;
   }
 
   toAPIResponse() {
@@ -18,21 +18,21 @@ class ErrorResponse implements APIResponse {
       message: this.message,
       messageCode: this.messageCode,
       note: this.note
-    }
+    };
   }
 
   static create(err: any): ErrorResponse {
-    let errorResponse = new ErrorResponse('')
-    if (typeof err == 'string') {
-      errorResponse.message = err
+    let errorResponse = new ErrorResponse("");
+    if (typeof err == "string") {
+      errorResponse.message = err;
     } else if (err instanceof ErrorResponse) {
-      errorResponse = err
+      errorResponse = err;
     } else {
-      errorResponse.message = "An error occurs."
-      errorResponse.note = err
+      errorResponse.message = "An error occurs.";
+      errorResponse.note = err;
     }
-    return errorResponse
+    return errorResponse;
   }
 }
 
-export default ErrorResponse
+export default ErrorResponse;

@@ -2,7 +2,6 @@ import IntlMessageFormat from "intl-messageformat";
 import _ from "lodash";
 import RootStore from "stores";
 import LanguageCodeEnum from "common/enumerations/LanguageCodeEnum";
-import HotelManager from 'modules/hotel/Manager/HotelManager';
 import InitializeManager from "common/Manager/InitializeManager";
 const mapping = (json: any, locale: string) => {
   return _.mapValues(json, (x: any) => x[locale.toLowerCase()] || "");
@@ -15,12 +14,12 @@ class I18n {
 
   constructor() {}
 
-   localizationData() {
+  localizationData() {
     return {
       ...require("modules/package/lang").default,
       ...require("modules/collective/lang").default,
       ...require("common/lang/index.ts").default,
-      ...InitializeManager.default.get()?.data?.lang || {}
+      ...(InitializeManager.default.get()?.data?.lang || {})
     };
   }
 
